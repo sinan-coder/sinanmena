@@ -72,7 +72,7 @@ table{width:100%;border-collapse:collapse}td{padding:8px;border-bottom:1px solid
 <div class="modal" id="md"><div class="box" id="bx"></div></div>
 
 <script>
-const $=s=>document.querySelector(s),KEY='sinanmena_v2',PH='2b5dda13e4d82d8195c0c59bc24fdd367fe295c2511604160a46d691f90ce205',API='';let pw='';const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+const $=s=>document.querySelector(s),KEY='sinanmena_v2',PH='2b5dda13e4d82d8195c0c59bc24fdd367fe295c2511604160a46d691f90ce205',API='https://sinanmena-api.pages.dev/';let pw='';const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
 let db=[],fav=[],hist=[],ad={},ad2={},lang='ar',view='home',admin=false,hi=0,cur=null,draft={eps:[{t:'',url:'',sub:''}],poster:'',bd:''};
 try{const s=JSON.parse(localStorage.getItem(KEY)||'{}');db=(s.db||[]).map(m=>({...m,local:true}));fav=s.fav||[];hist=s.hist||[];ad=s.ad||{};ad2=s.ad2||{};lang=s.lang||'ar'}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({db:db.filter(m=>m.local),fav,hist,lang,ad,ad2},(k,v)=>typeof v=='string'&&v.startsWith('blob:')?'':v))}catch(e){alert('Storage full – use smaller images')}};
