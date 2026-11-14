@@ -128,16 +128,16 @@ let adTmp='';
 function adPic(inp){const f=inp.files[0];if(!f)return;const im=new Image;im.onload=()=>{const c=document.createElement('canvas');c.width=300;c.height=250;const x=c.getContext('2d'),r=Math.max(300/im.width,250/im.height);x.drawImage(im,(300-im.width*r)/2,(250-im.height*r)/2,im.width*r,im.height*r);adTmp=c.toDataURL('image/jpeg',.8)};im.src=URL.createObjectURL(f)}
 function adSave(){ad={img:adTmp||ad.img||'',link:$('#ad_link').value.trim()};save();renderAd();alert('تم حفظ الإعلان ✔')}
 function adClear(){ad={};adTmp='';save();renderAd()}
-function renderAd(){const w=$('#adwrap'),b=$('#adbox');if(b.dataset.m){b.innerHTML='';delete b.dataset.m}
-if(ad.img){b.innerHTML=`<a href="${esc(ad.link||'#')}" target="_blank" rel="sponsored noopener"><img src="${ad.img}" width="300" height="250" alt=""></a>`;b.dataset.m=1}
+function renderAd(){const w=$('#adwrap'),b=$('#adbox'),k=ad.img?ad.img.length+(ad.link||''):'';if(ad.img&&b.dataset.k==k){w.style.display='';return}if(b.dataset.m){b.innerHTML='';delete b.dataset.m;delete b.dataset.k}
+if(ad.img){b.dataset.k=k;b.innerHTML=`<a href="${esc(ad.link||'#')}" target="_blank" rel="sponsored noopener"><img src="${ad.img}" width="300" height="250" alt=""></a>`;b.dataset.m=1}
 else if(!b.children.length&&admin){b.innerHTML='<div class="adph">مساحة إعلانية 300×250</div>';b.dataset.m=1}
 w.style.display=b.children.length?'':'none'}
 let barTmp='';
 function barPic(inp){const f=inp.files[0];if(!f)return;const im=new Image;im.onload=()=>{const c=document.createElement('canvas');c.width=728;c.height=90;const x=c.getContext('2d'),r=Math.max(728/im.width,90/im.height);x.drawImage(im,(728-im.width*r)/2,(90-im.height*r)/2,im.width*r,im.height*r);barTmp=c.toDataURL('image/jpeg',.8)};im.src=URL.createObjectURL(f)}
 function barSave(){ad2={img:barTmp||ad2.img||'',link:$('#bar_link').value.trim()};save();renderBar();alert('تم حفظ البانر ✔')}
 function barClear(){ad2={};barTmp='';save();renderBar()}
-function renderBar(){const w=$('#adbar'),b=$('#adbarbox');if(b.dataset.m){b.innerHTML='';delete b.dataset.m}
-if(ad2.img){b.innerHTML=`<a href="${esc(ad2.link||'#')}" target="_blank" rel="sponsored noopener"><img src="${ad2.img}" alt=""></a>`;b.dataset.m=1}
+function renderBar(){const w=$('#adbar'),b=$('#adbarbox'),k=ad2.img?ad2.img.length+(ad2.link||''):'';if(ad2.img&&b.dataset.k==k){w.style.display='flex';document.body.classList.add('hasbar');return}if(b.dataset.m){b.innerHTML='';delete b.dataset.m;delete b.dataset.k}
+if(ad2.img){b.dataset.k=k;b.innerHTML=`<a href="${esc(ad2.link||'#')}" target="_blank" rel="sponsored noopener"><img src="${ad2.img}" alt=""></a>`;b.dataset.m=1}
 else if(!b.children.length&&admin){b.innerHTML='<div class="adph">مساحة إعلانية 728×90</div>';b.dataset.m=1}
 const on=b.children.length>0;w.style.display=on?'flex':'none';document.body.classList.toggle('hasbar',on)}
 function del(id){if(confirm('حذف هذا العنوان؟')){db=db.filter(m=>m.id!=id);fav=fav.filter(x=>x!=id);hist=hist.filter(x=>x!=id);save();render()}}
