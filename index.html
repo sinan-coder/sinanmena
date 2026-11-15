@@ -88,6 +88,7 @@ html.phone .burger,html.tab .burger{display:block}
 html.phone .thumb,html.tab .thumb{display:none}
 html.phone .fr,html.tab .fr{grid-template-columns:1fr}
 html.phone .top,html.tab .top{padding:0 12px}
+html{overflow-x:hidden}html,body{max-width:100%}html.phone body,html.tab body{overflow-x:hidden}
 .sea{display:flex;gap:8px;overflow-x:auto;padding:4px 0 8px;margin-top:14px;scrollbar-width:thin}.sea button{flex:none;padding:7px 18px;border-radius:20px;background:var(--sf2);border:1px solid var(--bd);font-weight:700;white-space:nowrap}.sea button.on{background:var(--red);border-color:var(--red);color:#fff}.eps{margin-top:4px}
 </style>
 </head>
@@ -106,7 +107,7 @@ html.phone .top,html.tab .top{padding:0 12px}
 <div class="modal" id="md"><div class="box" id="bx"></div></div>
 
 <script>
-const $=s=>document.querySelector(s),KEY='sinanmena_v2',PH='2b5dda13e4d82d8195c0c59bc24fdd367fe295c2511604160a46d691f90ce205',API='https://sinanmena-api.h2569449.workers.dev/';let pw='';const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+const $=s=>document.querySelector(s),KEY='sinanmena_v2',PH='2b5dda13e4d82d8195c0c59bc24fdd367fe295c2511604160a46d691f90ce205',API='';let pw='';const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
 let db=[],fav=[],hist=[],ad={},ad2={},lang='ar',view='home',admin=false,hi=0,cur=null,draft={eps:[{t:'',url:'',sub:''}],poster:'',bd:''};
 try{const s=JSON.parse(localStorage.getItem(KEY)||'{}');db=(s.db||[]).map(m=>({...m,local:true}));fav=s.fav||[];hist=s.hist||[];ad=s.ad||{};ad2=s.ad2||{};lang=s.lang||'ar'}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({db:db.filter(m=>m.local),fav,hist,lang,ad,ad2},(k,v)=>typeof v=='string'&&v.startsWith('blob:')?'':v))}catch(e){alert('Storage full – use smaller images')}};
