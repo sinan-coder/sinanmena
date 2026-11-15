@@ -52,14 +52,46 @@ table{width:100%;border-collapse:collapse}td{padding:8px;border-bottom:1px solid
 .tll{border-inline-start:3px solid var(--red);padding-inline-start:18px;margin:16px 6px}.tll p{margin:0 0 12px}
 .pw1{margin:10px 5vw 40px;text-align:center}.pw1 small{display:block;color:var(--mu);font-size:11px;letter-spacing:1px;margin-bottom:4px}#pbx1{width:300px;height:250px;max-width:100%;margin:auto;border-radius:12px;overflow:hidden;background:var(--sf2);border:1px solid var(--bd)}#pbx1 a,#pbx1 img{display:block;width:100%;height:100%}.pph{height:100%;display:grid;place-items:center;color:var(--mu)}
 #pbar{position:fixed;bottom:0;inset-inline:0;z-index:80;background:var(--sf);border-top:1px solid var(--bd);height:calc(92px + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px);align-items:center;justify-content:center}#pbar small{position:absolute;top:2px;inset-inline-start:8px;font-size:10px;color:var(--mu)}#pbarbox{width:728px;max-width:100%;height:90px;overflow:hidden;display:flex;justify-content:center;background:var(--sf2)}#pbarbox a,#pbarbox img{display:block;width:100%;height:100%;object-fit:cover}body.hasbar{padding-bottom:calc(92px + env(safe-area-inset-bottom,0px))}body.hasbar .side{bottom:92px}.hasbar .modal{padding-bottom:100px}
-@media(max-width:700px){#pbar{bottom:calc(60px + env(safe-area-inset-bottom,0px));height:54px;padding-bottom:0}#pbarbox{width:320px;height:50px}body:has(.modal.open) #pbar{bottom:0;height:calc(54px + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px)}body.hasbar{padding-bottom:calc(116px + env(safe-area-inset-bottom,0px))}body.hasbar .side{bottom:0}}
+
 .bnav{display:none}
-@media(max-width:700px){.bnav{display:flex;position:fixed;bottom:0;inset-inline:0;z-index:50;background:var(--sf);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}.bnav button{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px;font-size:11px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.bnav button.on{color:#fff}.bnav button.on svg{stroke:var(--red2)}.top{height:56px;gap:8px}.srch{max-width:none}.tl{padding:4px 8px;font-size:13px}.hero{height:58vh;min-height:360px;padding:0 18px 28px}.hc p{-webkit-line-clamp:3;font-size:14px}.btn{padding:10px 24px}.pad{padding:0 14px 90px}.grid{grid-template-columns:repeat(2,1fr);gap:12px}.cd{width:130px}.grid .cd{width:auto}.modal{padding:0}.box{border-radius:0;min-height:100vh;max-width:none}.arrow{width:38px;height:38px;top:30%}.pw1{margin-bottom:80px}}
-@media(max-width:900px){.side{transform:translateX(100%)}[dir=ltr] .side{transform:translateX(-100%)}.side.open{transform:none!important}.main{margin-inline-start:0}.burger{display:block}.thumb{display:none}.fr{grid-template-columns:1fr}.top{padding:0 12px}}
+
+
+#dev{position:fixed;inset:0;z-index:100;background:var(--bg);display:none;flex-direction:column;align-items:center;justify-content:center;gap:22px;padding:20px;text-align:center}#dev.open{display:flex}#dev h1{margin:0;font-size:28px}.dc{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}.dc button{width:150px;padding:22px 10px;border:2px solid var(--bd);border-radius:16px;background:var(--sf);font-weight:700;font-size:16px}.dc button:hover,.dc button.sg{border-color:var(--red);background:var(--sf2)}.dc small{color:var(--mu);font-weight:400}.dc svg.i{width:48px;height:48px;display:block;margin:0 auto 8px}
+html.phone #pbar{bottom:calc(60px + env(safe-area-inset-bottom,0px));height:54px;padding-bottom:0}
+html.phone #pbarbox{width:320px;height:50px}
+html.phone body:has(.modal.open) #pbar{bottom:0;height:calc(54px + env(safe-area-inset-bottom,0px));padding-bottom:env(safe-area-inset-bottom,0px)}
+html.phone body.hasbar{padding-bottom:calc(116px + env(safe-area-inset-bottom,0px))}
+html.phone body.hasbar .side{bottom:0}
+html.phone .bnav{display:flex;position:fixed;bottom:0;inset-inline:0;z-index:50;background:var(--sf);border-top:1px solid var(--bd);padding-bottom:env(safe-area-inset-bottom,0px)}
+html.phone .bnav button{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 2px;font-size:11px;color:var(--mu);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html.phone .bnav button.on{color:#fff}
+html.phone .bnav button.on svg{stroke:var(--red2)}
+html.phone .top{height:56px;gap:8px}
+html.phone .srch{max-width:none}
+html.phone .tl{padding:4px 8px;font-size:13px}
+html.phone .hero{height:58vh;min-height:360px;padding:0 18px 28px}
+html.phone .hc p{-webkit-line-clamp:3;font-size:14px}
+html.phone .btn{padding:10px 24px}
+html.phone .pad{padding:0 14px 90px}
+html.phone .grid{grid-template-columns:repeat(2,1fr);gap:12px}
+html.phone .cd{width:130px}
+html.phone .grid .cd{width:auto}
+html.phone .modal{padding:0}
+html.phone .box{border-radius:0;min-height:100vh;max-width:none}
+html.phone .arrow{width:38px;height:38px;top:30%}
+html.phone .pw1{margin-bottom:80px}
+html.phone .side,html.tab .side{transform:translateX(100%)}
+html.phone[dir=ltr] .side,html.tab[dir=ltr] .side{transform:translateX(-100%)}
+html.phone .side.open,html.tab .side.open{transform:none!important}
+html.phone .main,html.tab .main{margin-inline-start:0}
+html.phone .burger,html.tab .burger{display:block}
+html.phone .thumb,html.tab .thumb{display:none}
+html.phone .fr,html.tab .fr{grid-template-columns:1fr}
+html.phone .top,html.tab .top{padding:0 12px}
 </style>
 </head>
 <body>
-<aside class="side" id="side"><div class="brand"><span class="lg"><svg class="i" viewBox="0 0 24 24" style="stroke:#fff"><path d="M4 20h16M6 20v-4h12v4M8 16v-4h8v4M10 12V8h4v4"/></svg></span><span><b>سينان</b> <em>مينا</em></span></div><div class="menu" id="menu"></div></aside>
+<aside class="side" id="side"><div class="brand"><span class="lg"><svg class="i" viewBox="0 0 24 24" style="stroke:#fff"><path d="M4 20h16M6 20v-4h12v4M8 16v-4h8v4M10 12V8h4v4"/></svg></span><span><b>سينان</b> <em>مينا</em></span></div><div class="menu" id="menu"></div><div class="menu"><button onclick="devAsk()"><svg class="i" viewBox="0 0 24 24"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>الجهاز / Device</button></div></aside>
 <div class="main">
  <div class="top"><button class="burger" onclick="$('#side').classList.toggle('open')"><svg class="i" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
  <div class="srch"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="q" oninput="doSearch(this.value)"></div><div class="sp"></div>
@@ -68,11 +100,12 @@ table{width:100%;border-collapse:collapse}td{padding:8px;border-bottom:1px solid
  <div class="pw1" id="pw1" style="display:none"><small>إعلان</small><div id="pbx1"><!--ADSENSE-CODE-HERE--></div></div>
 </div>
 <div id="pbar" style="display:none"><small>إعلان</small><div id="pbarbox"><!--ADSENSE-BAR-CODE-HERE--></div></div>
+<div id="dev"></div>
 <nav class="bnav" id="bnav"></nav>
 <div class="modal" id="md"><div class="box" id="bx"></div></div>
 
 <script>
-const $=s=>document.querySelector(s),KEY='sinanmena_v2',PH='2b5dda13e4d82d8195c0c59bc24fdd367fe295c2511604160a46d691f90ce205',API='https://sinanmena-api.h2569449.workers.dev/';let pw='';const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
+const $=s=>document.querySelector(s),KEY='sinanmena_v2',PH='2b5dda13e4d82d8195c0c59bc24fdd367fe295c2511604160a46d691f90ce205',API='';let pw='';const sha=async s=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s)))].map(b=>b.toString(16).padStart(2,'0')).join('');
 let db=[],fav=[],hist=[],ad={},ad2={},lang='ar',view='home',admin=false,hi=0,cur=null,draft={eps:[{t:'',url:'',sub:''}],poster:'',bd:''};
 try{const s=JSON.parse(localStorage.getItem(KEY)||'{}');db=(s.db||[]).map(m=>({...m,local:true}));fav=s.fav||[];hist=s.hist||[];ad=s.ad||{};ad2=s.ad2||{};lang=s.lang||'ar'}catch(e){}
 const save=()=>{try{localStorage.setItem(KEY,JSON.stringify({db:db.filter(m=>m.local),fav,hist,lang,ad,ad2},(k,v)=>typeof v=='string'&&v.startsWith('blob:')?'':v))}catch(e){alert('Storage full – use smaller images')}};
@@ -146,6 +179,11 @@ function payload(){return{db:db.map(m=>{const c={...m};delete c.local;c.eps=c.ep
 async function pub(v){if(!API){if(v)alert('API غير مضبوط');return}try{const r=await fetch(API+'/content',{method:'PUT',headers:{'x-pw':pw,'content-type':'application/json'},body:JSON.stringify(payload())});if(!r.ok)throw 0;db.forEach(m=>delete m.local);save();if(v)alert('تم النشر ✔')}catch(e){alert('تعذر النشر — تحقق من الاتصال وكلمة المرور')}}
 function exportC(){const o={db:db.map(m=>{const c={...m};delete c.local;c.eps=c.eps.map(e=>({...e,url:(e.url||'').startsWith('blob:')?'':e.url}));return c}),ad,ad2};const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(o)],{type:'application/json'}));a.download='content.json';a.click()}
 fetch(API?API+'/content':'content.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).then(j=>{if(!j)return;if(API){const ids=(j.db||[]).map(m=>m.id);db=(j.db||[]).concat(db.filter(m=>m.local&&!ids.includes(m.id)));ad=j.ad||{};ad2=j.ad2||{};render();return}const loc=db.filter(m=>m.local),ids=(j.db||[]).map(m=>m.id);db=(j.db||[]).concat(loc.filter(m=>!ids.includes(m.id)));if(!ad.img&&j.ad&&j.ad.img)ad=j.ad;if(!ad2.img&&j.ad2&&j.ad2.img)ad2=j.ad2;render();renderAd()}).catch(()=>{});
+const DEVS=[['phone','هاتف','Phone','<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>'],['tab','تابلت','Tablet','<rect x="4" y="2" width="16" height="20" rx="2"/><path d="M11 18h2"/>'],['pc','كمبيوتر','Computer','<rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/>']];
+function applyDev(d){const h=document.documentElement;h.classList.remove('phone','tab','pc');h.classList.add(d);const m=document.querySelector('meta[name=viewport]');if(m)m.content=d=='pc'?'width=1280, viewport-fit=cover':'width=device-width, initial-scale=1, viewport-fit=cover'}
+function devAsk(){const g=innerWidth<700?'phone':innerWidth<1000?'tab':'pc';$('#dev').innerHTML=`<h1>ما نوع جهازك؟</h1><p style="color:var(--mu);margin:0">Which device are you using?</p><div class="dc">${DEVS.map(d=>`<button class="${d[0]==g?'sg':''}" onclick="setDev('${d[0]}')"><svg class="i" viewBox="0 0 24 24">${d[3]}</svg>${d[1]}<br><small>${d[2]}</small></button>`).join('')}</div><small style="color:var(--mu)">يمكنك تغيير ذلك لاحقاً من القائمة</small>`;$('#dev').classList.add('open')}
+function setDev(d){try{localStorage.setItem('sinan_dev',d)}catch(e){}applyDev(d);$('#dev').classList.remove('open');$('#side').classList.remove('open');render()}
+{let d=null;try{d=localStorage.getItem('sinan_dev')}catch(e){}if(d){applyDev(d)}else{applyDev(innerWidth<700?'phone':innerWidth<1000?'tab':'pc');devAsk()}}
 </script>
 </body>
 </html>
